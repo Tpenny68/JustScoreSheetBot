@@ -561,7 +561,7 @@ def main():
     bot = commands.Bot(command_prefix=os.getenv('PREFIX'), intents=discord.Intents.all(), case_insensitive=True,
                        allowed_mentions=discord.AllowedMentions(everyone=False))
     bot.remove_command('help')
-    bot.add_cog(ScoreSheetBot(bot))
+    await bot.add_cog(ScoreSheetBot(bot))
     bot.run(token)
 
 
