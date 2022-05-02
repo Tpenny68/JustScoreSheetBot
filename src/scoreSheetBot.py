@@ -555,14 +555,15 @@ class ScoreSheetBot(commands.Cog):
             lf.close()
 
 
-def main():
+async def main():
     load_dotenv()
     token = os.getenv('DISCORD_TOKEN')
     bot = commands.Bot(command_prefix=os.getenv('PREFIX'), intents=discord.Intents.all(), case_insensitive=True,
                        allowed_mentions=discord.AllowedMentions(everyone=False))
-    bot.remove_command('help')
-    await bot.add_cog(ScoreSheetBot(bot))
-    bot.run(token)
+    async with bot:
+        bot.remove_command('help')
+        await bot.add_cog(ScoreSheetBot(bot))
+        await bot.start(token)
 
 
 if __name__ == '__main__':
