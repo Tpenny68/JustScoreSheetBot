@@ -1,2 +1,4 @@
 # Replit Takeout Special Files
-.replit-takeout-otbackup/.env
+.replit-takeout-otbackup/
+.DS_Store
+.env
