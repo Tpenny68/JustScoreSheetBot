@@ -6,6 +6,7 @@ import nest_asyncio
 _project_path = dirname(dirname(realpath(__file__)))
 sys.path.append(_project_path)
 
+
 from src.scoreSheetBot import main
 
 # nest_asyncio.apply()
