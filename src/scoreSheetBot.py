@@ -221,7 +221,7 @@ class ScoreSheetBot(commands.Cog):
         await self._set_current(ctx, Battle(team1, team2, size, BattleType.MOCK))
         await ctx.send(embed=self._current(ctx).embed())
 
-    @commands.command(**help_doc['stats'], aliases=['TAH'])
+    '''@commands.command(**help_doc['stats'], aliases=['TAH'])
     async def stats(self, ctx, *, name: str = None):
         if name:
             ambiguous = ambiguous_lookup(name, self)
@@ -244,7 +244,7 @@ class ScoreSheetBot(commands.Cog):
         pages = menus.MenuPages(
             source=Paged(crew_matches(actual_crew), title=title, color=actual_crew.color, thumbnail=actual_crew.icon),
             clear_reactions_after=True)
-        await pages.start(ctx)
+        await pages.start(ctx)'''
 
     @commands.command(**help_doc['countdown'])
     @ss_channel

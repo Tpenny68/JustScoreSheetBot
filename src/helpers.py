@@ -2,7 +2,7 @@ import discord
 import asyncio
 
 from typing import Union, Iterable
-from discord.ext import menus
+#from discord.ext import menus
 from src.battle import *
 from src.constants import *
 
@@ -12,7 +12,7 @@ Context = discord.ext.commands.Context
 def key_string(ctx: Context) -> str:
     return str(ctx.guild) + '|' + str(ctx.channel.id)
 
-class PlayerStatsPaged(menus.ListPageSource):
+'''class PlayerStatsPaged(menus.ListPageSource):
     def __init__(self, member: discord.Member, bot: 'ScoreSheetBot'):
         season_stats = discord.Embed(title=f"Season Stats for {str(member)}", color=member.color)
         weighted, taken, lost, mvps = player_stocks(member, True)
@@ -74,7 +74,7 @@ class PlayerStatsPaged(menus.ListPageSource):
         super().__init__(data, per_page=1)
 
     async def format_page(self, menu, entries) -> discord.Embed:
-        return entries
+        return entries'''
 
 
 async def update_channel_open(prefix: str, channel: discord.TextChannel):
