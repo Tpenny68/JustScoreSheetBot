@@ -141,7 +141,7 @@ class Team:
         for player in self.mvp():
             players += f'**{str(player)}**, '
         ##return f'MVP for **{self.name}** was {players[:-2]} with {self.mvp()[0].taken} stocks'##
-        return f"For team **{self.name}**, J.A.R.V.I.S. detects the MVP(s){players[:-2]} with {self.mvp()[0].taken} stocks"
+        return f"For team **{self.name}**, J.A.R.V.I.S. detects the MVP(s), {players[:-2]}, with {self.mvp()[0].taken} stocks"
 
     def current_status(self) -> str:
         if self.current_player:
