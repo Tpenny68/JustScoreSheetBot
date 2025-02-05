@@ -221,6 +221,31 @@ class ScoreSheetBot(commands.Cog):
         await self._set_current(ctx, Battle(team1, team2, size, BattleType.MOCK))
         await ctx.send(embed=self._current(ctx).embed())
 
+    @commands.command(**help_doc['stats'], aliases=['TAH'])
+    async def stats(self, ctx, *, name: str = None):
+        if name:
+            ambiguous = ambiguous_lookup(name, self)
+            if isinstance(ambiguous, discord.Member):
+
+                pages = menus.MenuPages(source=PlayerStatsPaged(ambiguous, self))
+                await pages.start(ctx)
+                return
+            else:
+                actual_crew = ambiguous
+        else:
+            pages = menus.MenuPages(source=PlayerStatsPaged(ctx.author, self))
+            await pages.start(ctx)
+            return
+        record = crew_record(actual_crew, CURRENT_LEAGUE_ID)
+        if not record[2]:
+            await ctx.send(f'{actual_crew.name} does not have any recorded crew battles with the bot.')
+            return
+        title = f'{actual_crew.name}: {record[1]}-{int(record[2]) - int(record[1])}'
+        pages = menus.MenuPages(
+            source=Paged(crew_matches(actual_crew), title=title, color=actual_crew.color, thumbnail=actual_crew.icon),
+            clear_reactions_after=True)
+        await pages.start(ctx)
+
     @commands.command(**help_doc['countdown'])
     @ss_channel
     async def countdown(self, ctx: Context, seconds: Optional[int] = 10):

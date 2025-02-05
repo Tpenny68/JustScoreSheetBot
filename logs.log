@@ -16,3 +16,11 @@ Traceback (most recent call last):
   File "/Users/tpenny68/Documents/GitHub/JustScoreSheetBot/src/scoreSheetBot.py", line 495, in kill
     await ctx.quit()
 AttributeError: 'Context' object has no attribute 'quit'
+Traceback (most recent call last):
+  File "/Users/tpenny68/.pyenv/versions/3.13.0/lib/python3.13/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tpenny68/Documents/GitHub/JustScoreSheetBot/src/scoreSheetBot.py", line 236, in stats
+    pages = menus.MenuPages(source=PlayerStatsPaged(ctx.author, self))
+            ^^^^^
+NameError: name 'menus' is not defined
