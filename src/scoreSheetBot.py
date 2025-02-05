@@ -455,7 +455,7 @@ class ScoreSheetBot(commands.Cog):
 
     @commands.command(**help_doc['stagelist'])
     async def stagelist(self, ctx: Context):
-        await ctx.send('https://cdn.discordapp.com/attachments/760303456757350400/815364853291286628/stagelist-1.png')
+        await ctx.send('https://media.discordapp.net/attachments/906245865386160229/1102303503558385714/SCSStagelist2023.png?ex=67a45963&is=67a307e3&hm=3dea1828e17179ed429f4ddbbe56665e3a644b492ec11496217738908b15287f&=&width=1842&height=1056')
 
     @commands.command(**help_doc['invite'])
     async def invite(self, ctx: Context):
@@ -489,6 +489,10 @@ class ScoreSheetBot(commands.Cog):
     @commands.command(**help_doc['guide'])
     async def guide(self, ctx):
         await ctx.send('INSERT GUIDE HERE')
+    
+    @commands.command("kill")
+    async def kill(context):
+        exit()
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx: Context, error):
