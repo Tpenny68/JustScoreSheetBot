@@ -56,4 +56,5 @@ help_doc = dict(
     thank=HelpDoc(Categories.misc, 'Thanks alexjett'),
     stagelist=HelpDoc(Categories.misc, 'Returns the stagelist'),
     invite=HelpDoc(Categories.misc, 'Returns the server invite'),
+    kill=HelpDoc(Categories.misc, "Kills the bot (I advise you to let the bot runner do this)")
 )

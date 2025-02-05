@@ -490,9 +490,10 @@ class ScoreSheetBot(commands.Cog):
     async def guide(self, ctx):
         await ctx.send('INSERT GUIDE HERE')
     
-    @commands.command("kill")
-    async def kill(context):
-        exit()
+    @commands.command(**help_doc["kill"])
+    async def kill(self, ctx):
+        await ctx.send("The bot is now dead XP")
+        await quit()
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx: Context, error):

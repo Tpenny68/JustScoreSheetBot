@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/tpenny68/.local/share/virtualenvs/JustScoreSheetBot-8hA2N69C/lib/python3.8/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/Users/tpenny68/Documents/GitHub/JustScoreSheetBot/src/scoreSheetBot.py", line 61, in help
+    await ctx.message.add_reaction(emoji='✉')
+TypeError: add_reaction() got some positional-only arguments passed as keyword arguments: 'emoji'
+Traceback (most recent call last):
+  File "/Users/tpenny68/.local/share/virtualenvs/JustScoreSheetBot-8hA2N69C/lib/python3.8/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/Users/tpenny68/Documents/GitHub/JustScoreSheetBot/src/scoreSheetBot.py", line 495, in kill
+    await ctx.exit()
+AttributeError: 'Context' object has no attribute 'exit'
+Traceback (most recent call last):
+  File "/Users/tpenny68/.local/share/virtualenvs/JustScoreSheetBot-8hA2N69C/lib/python3.8/site-packages/discord/ext/commands/core.py", line 235, in wrapped
+    ret = await coro(*args, **kwargs)
+  File "/Users/tpenny68/Documents/GitHub/JustScoreSheetBot/src/scoreSheetBot.py", line 495, in kill
+    await ctx.quit()
+AttributeError: 'Context' object has no attribute 'quit'
