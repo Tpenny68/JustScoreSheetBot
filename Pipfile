@@ -4,7 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-pipenv = "*"
 install = "*"
 python-dotenv = ">=0.15.0"
 async-timeout = ">=3.0.1"
